@@ -3,7 +3,6 @@ class Node:
         self.data = data
         self.next = None
 
-
 class LinkedList:
     def __init__(self):
         self.head = None
@@ -64,6 +63,13 @@ class LinkedList:
         print("None")
 
     def reverse(self):
+        def print_list(head):
+            current = head
+            while current:
+                print(current.data, end=" -> ")
+                current = current.next
+            print("None")
+
         prev_node = None
         current_node = self.head
         while current_node:
@@ -71,6 +77,7 @@ class LinkedList:
             current_node.next = prev_node
             prev_node = current_node
             current_node = next_node
+            print_list(prev_node)
         self.head = prev_node
 
     def sort(self):
@@ -95,6 +102,7 @@ class LinkedList:
                 search_node.next = current
         self.head = sorted_head
 
+
     def keep_last_occurrences(self):
         if not self.head:
             return
@@ -117,19 +125,11 @@ class LinkedList:
         current_node.next = None
 
         self.head = new_head
-
-linked_list = LinkedList()
-linked_list.append(1)
-linked_list.append(2)
-linked_list.append(3)
-linked_list.append(2)
-linked_list.append(1)
-linked_list.append(4)
-
-print("Исходный список:")
-linked_list.print_list()
-
-linked_list.keep_last_occurrences()
-
-print("Список после удаления дубликатов:")
-linked_list.print_list()
+ll = LinkedList()
+ll.append(10)
+ll.append(20)
+ll.append(20)
+ll.append(30)
+ll.print_list()
+ll.keep_last_occurrences()
+ll.print_list()  
