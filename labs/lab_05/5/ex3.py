@@ -10,13 +10,12 @@ class Block:
         block_string = f"{self.index}{self.data}{self.previous_hash}"
         return hashlib.sha256(block_string.encode()).hexdigest()  # Хешируем строку и возвращаем результат
 
-# Определяем класс Blockchain
 class Blockchain:
     def __init__(self):
         self.chain = [self.create_genesis_block()]  # Начинаем цепочку с генезис-блока
 
     def create_genesis_block(self):
-        return Block(0, "Genesis Block", "0")  # Создаем первый блок с индексом 0
+        return Block(0, "Block", "0")  # Создаем первый блок с индексом 0
 
     def add_block(self, data):
         previous_block = self.chain[-1]
@@ -29,9 +28,9 @@ if __name__ == "__main__":
     my_blockchain = Blockchain()
 
     # Добавляем несколько блоков в блокчейн
-    my_blockchain.add_block("Первый блок после генезиса")
-    my_blockchain.add_block("Второй блок после генезиса")
-    my_blockchain.add_block("Третий блок после генезиса")
+    my_blockchain.add_block("Второй блок")
+    my_blockchain.add_block("Третий блок")
+    my_blockchain.add_block("Четвертый блок")
 
     # Выводим информацию о каждом блоке в цепочке
     for block in my_blockchain.chain:

@@ -126,10 +126,43 @@ class LinkedList:
 
         self.head = new_head
 ll = LinkedList()
-ll.append(10)
-ll.append(20)
-ll.append(20)
-ll.append(30)
+print("Проверяем метод, который добавляет элементы:")
+ll.append(1)
+ll.append(2)
+ll.append(3)
 ll.print_list()
-ll.keep_last_occurrences()
-ll.print_list()  
+
+print("Проверяем метод, который добавляет элемент в начало списка:")
+ll.prepend(0)
+ll.print_list()
+
+print("Проверяем метод, который удаляет элементы:")
+ll.delete_by_value(2)
+ll.print_list()
+
+print("Проверяем метод, который добавляет элемент после другого элемента:")
+ll.insert_after_value(1, 1.5)
+ll.print_list()
+
+print("Проверяем метод, который добавляет элемент перед другим элементом:")
+ll.insert_after_value(1.5, 1.25)
+ll.print_list()
+
+print("Проверяем метод, который переворачивает список:")
+ll.reverse()
+ll.print_list()
+
+print("Проверяем метод, который сортирует элементы:")
+ll.sort()
+ll.print_list()
+
+
+print("Проверяем метод, который удаляет дубликаты:")
+L1 = LinkedList()
+L1.append(1)
+L1.append(2)
+L1.append(3)
+L1.append(3)
+L1.keep_last_occurrences()
+L1.print_list()
+

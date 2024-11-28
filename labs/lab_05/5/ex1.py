@@ -44,11 +44,12 @@ class HashTable:
         return "{" + ", ".join(f"{k}: {v}" for k, v in sorted_items) + "}"
 
 ht = HashTable()
-ht.insert("cherry", 1)
-ht.insert("banana", 3)
-ht.insert("orange", 2)
-ht.insert("apple", 4)
+ht.insert("cola", 1)
+ht.insert("fanta", 3)
+ht.insert("sprite", 2)
+ht.insert("mountain", 4)
+ht.insert("pepsi", 5)
 
-print(ht.get("banana"))  # Вывод: 3
+print(ht.get("mountain"))
 print(ht)
-print(ht.check_collision("banana", "cherry"))
+print(ht.check_collision("mountain", "sprite"))

@@ -56,15 +56,16 @@ class HashTable:
                 self.insert(item[0], item[1])
 
     def __str__(self):
-        all_items = [(k, v) for k, v in self.table if k is not None]
+        all_items = [(k, v) for item in self.table if item is not None for k, v in [item]]
         sorted_items = sorted(all_items, key=lambda x: x[1])
         return "{" + ", ".join(f"{k}: {v}" for k, v in sorted_items) + "}"
+
 
 ht = HashTable()
 ht.insert("apple", 1)
 ht.insert("banana", 3)
 ht.insert("orange", 2)
 
-print(ht.get("banana"))  # Вывод: 3
+print(ht.get("banana"))
 ht.remove("apple")
 print(ht)
